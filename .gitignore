@@ -1,9 +1,8 @@
-~~*.js
-/node_modules/
-*.log
-/public/prod-pages
-dist
-.idea/
+dist/
+deploy_versions/
+.temp/
+.rn_temp/
+node_modules/
 .DS_Store
-src/.Ds_Store
-
+.swc
+dev

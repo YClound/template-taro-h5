@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <meta content="width=device-width,initial-scale=1,user-scalable=no" name="viewport">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta name="format-detection" content="telephone=no,address=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="white">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+  <title>天天抽奖</title>
+  <script src="https://gw.alipayobjects.com/as/g/h5-lib/alipayjsapi/3.1.1/alipayjsapi.min.js"></script>
+  <script><%= htmlWebpackPlugin.options.script %></script>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script type="text/javascript">
+		function loadScript(moduleName, cb) {
+			function scriptLoaded() {
+			  document.body.removeChild(domScript);
+			  domScript.removeEventListener('load', scriptLoaded, false);
+			  cb && cb();
+			}
+			var domScript = document.createElement('script');
+			domScript.async = true;
+			domScript.src = moduleName;
+			domScript.addEventListener('load', scriptLoaded, false);
+			document.body.appendChild(domScript);
+		}
+		(function(){
+			var dev = false;
+			if (/debug=show/.test(location.href || '')|| dev) {
+				loadScript('https://cdn.bootcdn.net/ajax/libs/vConsole/3.15.1/vconsole.min.js', function () {
+					new window.VConsole();
+				})
+			}
+		})();
+	</script>
+</body>
+</html>
